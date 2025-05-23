@@ -1,0 +1,2 @@
+prompt_path: D:/Github/research_llm/project/promts/extract_all_fields.txt
+output_json_path: output.json

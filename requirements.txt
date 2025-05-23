@@ -1,0 +1,6 @@
+langchain>=0.1.0
+langchain-groq>=0.1.2
+pdfplumber>=0.10.2
+python-dotenv>=1.0.0
+pyyaml>=6.0
+streamlit>=1.25.0

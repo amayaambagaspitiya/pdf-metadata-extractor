@@ -1,0 +1,60 @@
+You are a highly capable metadata extraction agent.
+
+From the following research paper text, extract all metadata fields and return them as structured JSON in the exact format specified below:
+
+{{"{"}}
+  "keywords_list": [
+    {{"{"}}
+      "lang": "ENG",
+      "keywords": ["..."]
+    {{"}"}}
+  ],
+  "title": [
+    {{"{"}}
+      "text": "...",
+      "lang": "ENG"
+    {{"}"}}
+  ],
+  "abstracts": [
+    {{"{"}}
+      "text": "...",
+      "lang": ["ENG"]
+    {{"}"}}
+  ],
+  "authors": [
+    {{"{"}}
+      "author_id": 1,
+      "name": "...",
+      "email": "..."
+    {{"}"}}
+  ],
+  "affiliations": [
+    {{"{"}}
+      "affiliation_id": 1,
+      "organization": ["..."],
+      "address_part": "...",
+      "city": "...",
+      "state": "...",
+      "postal_code": "...",
+      "country": "..."
+    {{"}"}}
+  ],
+  "references": [
+    {{"{"}}
+      "ref_fulltext": "...",
+      "reference_number": 1
+    {{"}"}}
+  ]
+{{"}"}}
+
+Detailed instructions:
+- For `title` and `abstracts`, include all available versions (e.g., English and Chinese). Detect language using tags like `ENG`, `CHN`, etc.
+- For `keywords_list`, group keywords by language.
+- For `authors`, extract full names and list any associated email addresses. Each author must have a unique `author_id`.
+- For `affiliations`, list all organizations with full metadata. Include `organization`, `city`, `state` (only for USA, Canada, Australia), `postal_code`, `country`, and `address_part`.
+- For `references`, extract full citation text as it appears and assign a sequential `reference_number` starting from 1.
+
+If any data is missing, return an empty string or list as appropriate.
+
+Text:
+{{ text }}
